@@ -25,9 +25,18 @@
     </script>
     <script src="library1.js" type="text/javascript"></script>
     <script src="parser.js" type="text/javascript"></script>
+    <script type="text/javascript">
+var codeURL=getPageParam("code");
+if(codeURL){
+   runApp(codeURL,q("#documentScreen"));
+}else{
+   document.body.innerHTML="<h1>No Code Was Added In ?code=</h1>";
+}
+
+    </script>
   </head>
   <body onload="">
-    
-    
+    <div id="documentScreen" style="position:fixed;top:0px;left:0px;right:0px;bottom:0px;overflow:auto;">
+    </div>
   </body>
 </html>
