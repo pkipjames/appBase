@@ -34,15 +34,24 @@
         if(codeURL){
           var xhr=new XMLHttpRequest();
           xhr.open("GET",codeURL);
-          xhr.addEventListener("readystatechange", handleCode);
+          xhr.addEventListener("readystatechange", 
+                            
+                               function (){
           
-          function handleCode(){
             if(xhr.readyState == 4 && xhr.status == 200){
+            
               q("#documentScreen").style.cursor="default";
+             
               q("#documentScreen").innerHTML="";
+              
               runApp(xhr.responseText,q("#documentScreen")); 
               
+        
             }
+           
+            );
+          
+          
             xhr.send(null);
           }
 
