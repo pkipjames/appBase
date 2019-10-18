@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parser</title>
+    <script type="text/javascript">
+      window.onerror = function (msg, url, lineNo, columnNo, error) {
+      var string = msg.toLowerCase();
+      var substring = "script error";
+      if (string.indexOf(substring) > -1){
+      alert('Script Error: See Browser Console for Detail');
+      } else {
+      var message = [
+      'Message: ' + msg,
+      'URL: ' + url,
+      'Line: ' + lineNo,
+      'Column: ' + columnNo,
+      'Error object: ' + JSON.stringify(error)
+      ].join(' - ');
+      
+      alert(message);
+      }
+      
+      return false;
+      };
+    </script>
+
+  </head>
+  <body onload="setTimeout(loadCode,1);">
+    <div id="documentScreen" style="position:fixed;top:0px;left:0px;right:0px;bottom:0px;overflow:auto;">
+      <div style="text-align:center;vertical-align:middle;">
+      <svg width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-eclipse" style="background: none;"><path ng-attr-d="{{config.pathCmd}}" ng-attr-fill="{{config.color}}" stroke="none" d="M10 50A40 40 0 0 0 90 50A40 41 0 0 1 10 50" fill="#000000" transform="rotate(53.6839 50 50.5)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50.5;360 50 50.5" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></path></svg>
+      </div>
+      
+    </div>
+  </body>
+</html>
