@@ -38,7 +38,8 @@
           
           function handleCode(){
             if(xhr.readyState == 4 && xhr.status == 200){
-              q("#documentScreen").style.cursor="wait";
+              q("#documentScreen").style.cursor="default";
+              q("#documentScreen").innerHTML="";
               runApp(xhr.responseText,q("#documentScreen")); 
               
             }
@@ -52,6 +53,7 @@
 
      
       }
+      
     </script>
   </head>
   <body onload="setTimeout(loadCode,1);">
