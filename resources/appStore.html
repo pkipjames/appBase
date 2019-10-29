@@ -24,12 +24,17 @@
       return false;
       };
     </script>
+    <script>
+      function installApp(url){
+        window.AppInventor.setWebViewString(url);
+      }
+    </script>
 
 
 
   </head>
   <body onload="">
-
+    <input type="text" id="appURL"/><button onclick="var input1=document.querySelectior('#appURL');installApp(input1.value);input1.value='';">Install</button>
       
   </body>
 </html>
