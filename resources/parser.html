@@ -47,7 +47,7 @@
               runApp(xhr.responseText,q("#documentScreen")); 
               
         
-            }else if(xhr.status>==400){
+            }else if(xhr.status>=400){
               document.body.innerHTML="<h1>Couldn't Load The Source- Http Status "+xhr.status+"</h1>";
 
             }
