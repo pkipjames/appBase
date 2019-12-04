@@ -123,8 +123,39 @@ topEnv["false"] = false;
   topEnv[op] = new Function("a, b", "return a " + op + " b;");
 });
 
+topEnv["clear"]=function(){
+  div.innerHTML="";
+ return true; 
+}
+
+topEnv["setContent"]=function(data){
+  div.innerHTML=data;
+ return true; 
+}
+
+topEnv["getContent"]=function(){
+ return div.innerHTML; 
+}
+topEnv["newWebSocket"]=function(){
+ return new WebSocket.apply(arguments); 
+}
+  
+topEnv["sendWSData"]=function(webSocketOBJ,data){
+ return webSocketOBJ.send(data); 
+}
+
+topEnv["handleWSData"]=function(webSocketOBJ,callback){
+ return webSocketOBJ.onmessage=(callback); 
+}
+topEnv["closeWS"]=function(webSocketOBJ,callback){
+ return webSocketOBJ.close(); 
+}
+topEnv["getWSURL"]=function(webSocketOBJ,callback){
+ return webSocketOBJ.url; 
+}
+  
 topEnv["print"] = function(value) {
-  div.write(value);
+  div.innerHTML+=(value);
   return value;
 };
 
