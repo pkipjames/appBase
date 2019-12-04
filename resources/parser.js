@@ -124,7 +124,7 @@ topEnv["false"] = false;
 });
 
 topEnv["print"] = function(value) {
-  console.log(value);
+  div.write(value);
   return value;
 };
 
